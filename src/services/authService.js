@@ -13,7 +13,7 @@ export const register = async (userData) => {
 // Iniciar sesión
 export const login = async (credentials) => {
   const response = await api.post("api/auth/login", credentials)
-  console.log("responseLogin", response);
+
 
   if (response.data.token) {
     localStorage.setItem("token", response.data.token)
