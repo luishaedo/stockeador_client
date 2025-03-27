@@ -30,9 +30,14 @@ export const logout = () => {
 
 // Obtener usuario actual
 export const getCurrentUser = () => {
-  const user = localStorage.getItem("user")
-  return user ? JSON.parse(user) : null
-}
+  try {
+    const user = localStorage.getItem("user");
+    return user ? JSON.parse(user) : null; 
+  } catch (error) {
+    console.error("Error al obtener el usuario:", error);
+    return null;
+  }
+};
 
 // Obtener perfil de usuario
 export const getProfile = async () => {
